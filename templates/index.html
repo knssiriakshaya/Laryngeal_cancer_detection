@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laryngeal Cancer Detection - Image Classification</title>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css" rel="stylesheet"> 
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, rgba(110, 124, 219, 0.7), rgba(79, 90, 151, 0.7)), 
+                        url('https://t3.ftcdn.net/jpg/08/78/37/14/360_F_878371475_wdGVuAwwG7pjOFmOURDaEB7Q2wXKB2IM.jpg'); 
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        /* Container Styling */
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(10px); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 2.4rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* File Input Styling */
+        input[type="file"] {
+            font-size: 1rem;
+            padding: 12px;
+            margin-bottom: 25px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background-color: #f7f7f7;
+            transition: border 0.3s ease, background-color 0.3s ease;
+        }
+
+        input[type="file"]:hover {
+            background-color: #f1f1f1;
+            border-color: #007bff;
+        }
+
+        /* Submit Button Styling */
+        input[type="submit"] {
+            font-size: 1.1rem;
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(0);
+        }
+
+        /* Focus Effects */
+        input[type="file"]:focus,
+        input[type="submit"]:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+        }
+
+        /* Small Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px;
+                max-width: 90%;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            input[type="file"],
+            input[type="submit"] {
+                width: 100%;
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload an Image for Laryngeal Cancer Classification</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+</html>
